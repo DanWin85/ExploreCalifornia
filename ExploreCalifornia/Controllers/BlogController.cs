@@ -12,6 +12,13 @@ namespace ExploreCalifornia.Controllers
     [Route("blog")]
     public class BlogController : Controller
     {
+
+        private readonly BlogDataContext _db;
+
+        public BlogController(BlogDataContext db)
+        {
+            _db = db;
+        }
         // GET: /<controller>/
         [Route("")]
         public IActionResult Index()
@@ -30,10 +37,10 @@ namespace ExploreCalifornia.Controllers
                     Title = "My second blog Post",
                     Posted = DateTime.Now,
                     Author = "Daniel Wingate",
-                    Body = "This is a great blog post, don't you think?",
+                    Body = "This is ANOTHER great blog post, don't you think?",
                 }
             };
-            return View();
+            return View(posts);
         }
         [Route("{year:min(2000)}/{month:range(1,12)}/{key}")]
         public IActionResult Post(int year, int month, string key)
@@ -58,10 +65,13 @@ namespace ExploreCalifornia.Controllers
         public IActionResult Create(Post post)
         {
             if(ModelState.IsValid)
-                return View(post);
+                return View();
 
             post.Author = User.Identity.Name;
             post.Posted = DateTime.Now;
+            
+            _db.Posts.Add(post);
+            _db.SaveChanges();
 
             return View();
         }
