@@ -25,21 +25,23 @@ namespace ExploreCalifornia
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<FeatureToggles>(x => new FeatureToggles{
+            services.AddTransient<FeatureToggles>(x => new FeatureToggles
+            {
                 DeveloperExceptions = configuration.GetValue<bool>("FeatureToggles:DeveloperExceptions")
             });
 
-            services.AddMvc();
             services.AddDbContext<BlogDataContext>(options =>
             {
-                var connectionString = configuration.GetConnectionString("BlogDataContext"); 
+                var connectionString = configuration.GetConnectionString("BlogDataContext");
                 options.UseSqlServer(connectionString);
             });
+            services.AddTransient<FormattingService>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(
-            IApplicationBuilder app, 
+            IApplicationBuilder app,
             IHostingEnvironment env,
             FeatureToggles features)
         {
@@ -58,7 +60,8 @@ namespace ExploreCalifornia
                 await next();
             });
 
-            app.UseMvc(routes => {
+            app.UseMvc(routes =>
+            {
                 routes.MapRoute("Default",
                     "{controller=Home}/{action=Index}/{id?}"
                 );

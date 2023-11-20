@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ExploreCalifornia",
+    "\\ExploreCalifornia\\Views",
+    "\\ExploreCalifornia\\Views\\Shared"
   ],
-  "SelectedNode": "\\ExploreCalifornia.sln",
+  "SelectedNode": "\\ExploreCalifornia\\Views\\Shared\\_Layout.cshtml",
   "PreviewInSolutionExplorer": false
 }

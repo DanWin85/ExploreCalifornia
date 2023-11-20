@@ -28,3 +28,4 @@ F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj
 F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.pdb
 F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.genruntimeconfig.cache
 F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\ExploreCalifornia.csproj.CopyComplete
+F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Post.cshtml.g.cs

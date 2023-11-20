@@ -8,8 +8,10 @@
 
 <fieldset>
 
-   <form asp-action="Create" asp-controller="Blog">
+    <form asp-action="Create" asp-controller="Blog">
+
         <div asp-validation-summary="ModelOnly" class="input-validation-error"></div>
+
         <p>
             <label asp-for="Title"></label>
             <input asp-for="Title" class="form-control" placeholder="Blog post title" />
@@ -18,7 +20,7 @@
 
         <p>
             <label asp-for="Body"></label>
-            <input asp-for="Body" class="form-control" placeholder="Blog post Content" />
+            <textarea asp-for="Body" class="form-control" placeholder="Blog post content"></textarea>
             <span asp-validation-for="Body"></span>
         </p>
 
@@ -26,8 +28,7 @@
             <button type="submit">Create Post</button>
         </p>
 
-
     </form>
 
-
 </fieldset>
+
