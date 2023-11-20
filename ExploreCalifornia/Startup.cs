@@ -6,6 +6,7 @@ using ExploreCalifornia.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,7 +36,15 @@ namespace ExploreCalifornia
                 var connectionString = configuration.GetConnectionString("BlogDataContext");
                 options.UseSqlServer(connectionString);
             });
+            services.AddDbContext<IdentityDataContext>(options =>
+            {
+                var connectionString = configuration.GetConnectionString("IdentityDataContext");
+                options.UseSqlServer(connectionString);
+            });
             services.AddTransient<FormattingService>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<IdentityDataContext>();
             services.AddMvc();
         }
 
@@ -59,6 +68,8 @@ namespace ExploreCalifornia
 
                 await next();
             });
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

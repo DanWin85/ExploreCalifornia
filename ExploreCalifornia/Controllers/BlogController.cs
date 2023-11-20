@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ExploreCalifornia.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -52,13 +53,13 @@ namespace ExploreCalifornia.Controllers
             var post = _db.Posts.FirstOrDefault(x => x.Key == key);
             return View(post);
         }
-
+        [Authorize]
         [HttpGet, Route("create")]
         public IActionResult Create()
         {
             return View();
         }
-
+        [Authorize]
         [HttpPost, Route("create")]
         public IActionResult Create(Post post)
         {

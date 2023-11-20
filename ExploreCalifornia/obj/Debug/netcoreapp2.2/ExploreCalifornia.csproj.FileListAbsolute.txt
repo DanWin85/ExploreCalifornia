@@ -31,3 +31,5 @@ F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj
 F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Post.cshtml.g.cs
 F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\MonthlySpecials\Default.cshtml.g.cs
 F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.cshtml.g.cs
+F:\Semister 2 2023\D202 Software Process\ExploreCalifornia\ExploreCalifornia\obj\Debug\netcoreapp2.2\Razor\Views\Account\Register.cshtml.g.cs
